@@ -16,9 +16,11 @@
 - Configure content of template paths in `tailwind.config.js`:
 `content: [ './src/**/*.{html,ts}' ]`
 - Add Tailwind directives to global styles in `src/styles.css`:
-`@tailwind base;
+```
+@tailwind base;
 @tailwind components;
-@tailwind utilities;`
+@tailwind utilities;
+```
 
 ###### SETUP STORYBOOK
 - Install Storybook.js:
@@ -30,8 +32,8 @@
 - Generate button component:
 `ng g c btn`
 - Add color param to button in `src/app/btn/btn.component.ts`:
-`import { Component, Input } from '@angular/core'; // Import input
-decorator
+```
+import { Component, Input } from '@angular/core'; // Import input decorator
 
 @Component({
   selector: 'app-btn',
@@ -44,14 +46,17 @@ export class BtnComponent {
   @Input()
   color?: string; // Color param
 
-}`
+}
+```
 - Add a simple button template in `src/app/btn/btn.component.html`:
-```<button
+```
+<button
     class='text-lg rounded-xl px-4 py-2 mx-6 my-4 text-white shadow-xl border-slate-400/50 border-2'
     [ngClass]="color === 'primary' ? 'bg-blue-700 hover:bg-blue-800' : 'bg-slate-500 hover:bg-slate-600'"
 >
   <ng-content></ng-content>
-</button>```
+</button>
+```
 
 ###### CREATE STORY FOR COMPONENT
 
