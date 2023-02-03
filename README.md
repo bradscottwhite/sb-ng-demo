@@ -1,5 +1,7 @@
 # sb-ng-demo
 
+Tutorial on my blog: https://blog.bradwhite.io/get-started-with-storybookjs-and-angular-w-tailwind-css
+
 ### Instructions
 
 ###### SETUP NG APP
