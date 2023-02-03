@@ -1,5 +1,6 @@
 {
   "name": "sb-ng-demo",
+  "homepage": "https://bradscottwhite.github.io/sb-ng-demo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,6 +10,8 @@
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static",
     "build-storybook": "npm run docs:json && build-storybook"
   },
   "private": true,
@@ -42,6 +45,7 @@
     "@types/jasmine": "~4.3.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
+    "gh-pages": "^5.0.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
