@@ -19,8 +19,11 @@ const Template: Story<Btn> = (args: Btn) => ({
 
 export const SimpleExample = Template.bind({});
 
-SimpleExample.args = {
-  color: 'blue'
+
+export const Primary = Template.bind({});
+
+Primary.args = {
+  color: 'primary'
 } as Partial<Btn>;
 
 /*export const Primary = Template.bind({});
