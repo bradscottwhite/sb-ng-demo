@@ -46,12 +46,12 @@ export class BtnComponent {
 
 }`
 - Add a simple button template in `src/app/btn/btn.component.html`:
-`<button
-    class='text-xl rounded-lg p-10 m-10'
-    [ngClass]="color === 'blue' ? 'bg-blue-700' : 'bg-gray-700'"
+```<button
+    class='text-lg rounded-xl px-4 py-2 mx-6 my-4 text-white shadow-xl border-slate-400/50 border-2'
+    [ngClass]="color === 'primary' ? 'bg-blue-700 hover:bg-blue-800' : 'bg-slate-500 hover:bg-slate-600'"
 >
   <ng-content></ng-content>
-</button>`
+</button>```
 
 ###### CREATE STORY FOR COMPONENT
 
