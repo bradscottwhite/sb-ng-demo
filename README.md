@@ -14,7 +14,10 @@
 - Initialize Tailwind:
 `npx tailwindcss init`
 - Configure content of template paths in `tailwind.config.js`:
-`content: [ './src/**/*.{html,ts}' ]`
+```
+content: [ './src/**/*.{html,ts}' ]
+```
+
 - Add Tailwind directives to global styles in `src/styles.css`:
 ```
 @tailwind base;
@@ -44,7 +47,7 @@ export class BtnComponent {
 
   // Add input decorator
   @Input()
-  color?: string; // Color param
+  color?: string; // Add color param
 
 }
 ```
@@ -57,8 +60,38 @@ export class BtnComponent {
   <ng-content></ng-content>
 </button>
 ```
+- NOTE: the `<ng-content>` tag is for the button's inner text
 
 ###### CREATE STORY FOR COMPONENT
+- Create a story for the button component at `src/app/stories/Btn.stories.ts`:
+```
+import { Story, Meta } from '@storybook/angular/types-6-0';
+import { BtnComponent as Btn } from '../app/btn/btn.component'; // Import btn component
+
+export default {
+  title: 'Component/Button', // Name the story
+  component: Btn,
+  argTypes: {}
+} as Meta;
+
+const Template: Story<Btn> = (args: Btn) => ({
+  props: args,
+  // This is our template for our btn:
+  template: `
+    <app-btn [color]="color">
+      This is a template test.
+    </app-btn>`,
+});
+
+// This displays a simple example of the component
+export const SimpleExample = Template.bind({});
+
+// This displays the component with the color as primary
+export const Primary = Template.bind({});
+Primary.args = {
+  color: 'primary'
+} as Partial<Btn>;
+```
 
 ###### RUN APP
 - Serve app:
