@@ -12,9 +12,9 @@ export default {
 const Template: Story<Btn> = (args: Btn) => ({
   props: args,
   template: `
-    <ap-btn [color]="color">
+    <app-btn [color]="color">
       This is a template test.
-    </ap-btn>`,
+    </app-btn>`,
 });
 
 export const SimpleExample = Template.bind({});
